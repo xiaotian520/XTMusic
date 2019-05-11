@@ -142,7 +142,7 @@ public class PlayMusicView extends FrameLayout {
         mIvPlay.setVisibility(View.VISIBLE);
         mFlPlayMusic.clearAnimation();
         mIvNeedle.startAnimation(mStopNeedleAnim);
-        mMusicBinder.stopMusic();
+        mMusicBinder.stopMusic();//停止播放音乐
     }
 
 
