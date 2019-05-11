@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!--高亮的状态-->
+    <!--焦点-->
+    <item android:state_focused="true" android:drawable="@drawable/commit_btn_h" />
+   <!--按下-->
+    <item android:state_pressed="true" android:drawable="@drawable/commit_btn_h" />
+    <!--选中-->
+    <item android:state_selected="true" android:drawable="@drawable/commit_btn_h" />
+
+
+    <!--默认状态-->
+    <item android:drawable="@drawable/commit_btn_n" />
+
+</selector>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="navBarHeight">56dp</dimen><!--NavBar高度-->
+    <dimen name="marginSize">16dp</dimen><!--边距-->
+    <dimen name="navBarTitleSize">22sp</dimen><!--NavBar字体大小-->
+    <dimen name="titleSize">18sp</dimen><!--文字大小-->
+    <dimen name="infoSize">18sp</dimen><!--注册字体大小-->
+    <dimen name="inputViewHeight">44dp</dimen><!--输入框高度-->
+    <dimen name="btnHeight">44dp</dimen><!--登陆按钮-->
+    <dimen name="radius">5dp</dimen><!--登录按钮弧度-->
+    <dimen name="itemHeight">44dp</dimen><!--修改密码选项的高度-->
+    <dimen name="marginTabSize">4dp</dimen><!--推荐歌单列表间距-->
+    <dimen name="albumMarginSize">4dp</dimen><!--边距-->
+    <dimen name="playNumImgSize">18dp</dimen><!--播放歌单右上角音乐图标大小-->
+    <dimen name="itemIconSize">56dp</dimen><!--最热音乐图片大小-->
+    <dimen name="itemPlaySize">36dp</dimen><!--最热音乐右侧播放按钮图片大小-->
+    <dimen name="discTopSize">90dp</dimen><!--光盘距离顶部的距离-->
+    <dimen name="playMusicIconSize">210dp</dimen><!--光盘中的图片的大小-->
+</resources>

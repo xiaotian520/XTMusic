@@ -1,0 +1,28 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+
+        <!--
+        相同：
+        都可以修改statusBar的颜色
+        都必须android 5.0+
+
+        不同：
+        statusBarColor优先级更高，会覆盖掉colorPrimaryDark
+        statusBarColor会在Android 5.0以下的版本出现警告
+        默认情况下 statusBarColor 的值继承自colorPrimaryDark
+        -->
+
+
+        <item name="colorPrimaryDark">@color/mainColor</item>
+        <!--statusBarColor优先级更高，会覆盖掉colorPrimaryDark-->
+
+        <!--新建values-v21可以消除5.0+警告-->
+        <item name="android:statusBarColor">@color/mainColor</item>
+        <!--过渡动画-->
+        <item name="android:windowAnimationStyle">@style/AnimationActivity</item>
+    </style>
+
+</resources>

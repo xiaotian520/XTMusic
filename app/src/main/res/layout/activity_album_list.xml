@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".activities.AlbumListActivity">
+
+    <include layout="@layout/nav_bar"/>
+
+    <!--专辑列表部分-->
+    <!--专辑列表标题布局-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:layout_margin="@dimen/marginSize">
+
+        <View
+            android:layout_width="4dp"
+            android:layout_height="22dp"
+            android:background="@color/mainColor"/>
+
+        <!--专辑音乐（文字）-->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="专辑音乐"
+            android:textColor="@color/titleColor"
+            android:textSize="@dimen/titleSize"
+            android:textStyle="bold"
+            android:layout_marginLeft="@dimen/marginTabSize"/>
+
+    </LinearLayout>
+
+
+    <!--RecyclerView-->
+    <!--显示的专辑音乐列表布局-->
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rv_list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    </android.support.v7.widget.RecyclerView>
+
+</LinearLayout>

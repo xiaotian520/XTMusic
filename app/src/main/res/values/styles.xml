@@ -1,0 +1,59 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+
+        <!--
+        相同：
+        都可以修改statusBar的颜色
+        都必须android 5.0+
+
+        不同：
+        statusBarColor优先级更高，会覆盖掉colorPrimaryDark
+        statusBarColor会在Android 5.0以下的版本出现警告
+        默认情况下 statusBarColor 的值继承自colorPrimaryDark
+        -->
+
+
+        <item name="colorPrimaryDark">@color/mainColor</item>
+
+        <!--过渡动画-->
+        <item name="android:windowAnimationStyle">@style/AnimationActivity</item>
+        <!--statusBarColor优先级更高，会覆盖掉colorPrimaryDark-->
+       <item name="android:statusBarColor">@color/mainColor</item>
+    </style>
+
+    <!--分割线-->
+    <style name="line">
+        <item name="android:layout_height">1dp</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:background">@color/lineColor</item>
+        <item name="android:layout_margin">@dimen/marginSize</item>
+    </style>
+
+    <!--过渡动画-->
+    <style name="AnimationActivity" parent="android:style/Animation.Activity">
+        <!--打开Activity时，新进入的activity执行的动画 -->
+        <item name="android:activityOpenEnterAnimation">@anim/open_enter</item>
+        <!--在打开activity的时候，原activity执行的动画-->
+        <item name="android:activityOpenExitAnimation">@anim/open_exit</item>
+        <!--退出activity时，退出的activity执行的动画-->
+        <item name="android:activityCloseExitAnimation">@anim/close_exit</item>
+        <!--退出activity时，重新显示的activity执行的动画-->
+        <item name="android:activityCloseEnterAnimation">@anim/close_enter</item>
+    </style>
+
+
+    <!--登陆按钮-->
+    <style name="commitBtn">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/btnHeight</item>
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:textSize">@dimen/titleSize</item>
+        <item name="android:layout_marginLeft">@dimen/marginSize</item>
+        <item name="android:layout_marginRight">@dimen/marginSize</item>
+        <item name="android:gravity">center</item>
+        <item name="android:background">@drawable/btn_commit_select</item>
+    </style>
+</resources>
