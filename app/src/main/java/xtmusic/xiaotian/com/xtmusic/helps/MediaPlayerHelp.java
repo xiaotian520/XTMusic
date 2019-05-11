@@ -103,7 +103,7 @@ public class MediaPlayerHelp {
         mMediaPlayer.pause();
     }
 
-    //外放通知接口
+    //外放通知接口     onMediaPlayerHelperListener
     public interface OnMediaPlayerHelperListener{
         void onPrepared(MediaPlayer mp);
         void onCompletion(MediaPlayer mp);
