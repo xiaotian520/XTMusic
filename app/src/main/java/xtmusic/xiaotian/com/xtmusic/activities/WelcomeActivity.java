@@ -9,6 +9,7 @@ import java.util.Timer;
 import java.util.TimerTask;
 
 import xtmusic.xiaotian.com.xtmusic.R;
+import xtmusic.xiaotian.com.xtmusic.utils.UserUtils;
 
 //1. 延迟3秒
 //2. 跳转页面
@@ -28,6 +29,7 @@ public class WelcomeActivity extends BaseActivity {
      * 初始化
      */
     private void init() {
+        final boolean isLogin = UserUtils.validateUserLogin(this);
         mTimer = new Timer();
         mTimer.schedule(new TimerTask() {
             @Override
@@ -35,7 +37,11 @@ public class WelcomeActivity extends BaseActivity {
                 //打印当前线程
                /* Log.e("WelcomeActivity","当前线程为"+Thread.currentThread());
                 toMain();*/
-                toLogin();
+                if (isLogin) {
+                    toMain();
+                } else {
+                    toLogin();
+                }
             }
         },3*1000);//时间为3秒
     }

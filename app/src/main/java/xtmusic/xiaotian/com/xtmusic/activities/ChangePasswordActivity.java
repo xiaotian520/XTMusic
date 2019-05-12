@@ -25,7 +25,7 @@ public class ChangePasswordActivity extends BaseActivity {
 
         mOldPassword = findViewById(R.id.input_oldpassword);
         mPassword = findViewById(R.id.input_newpassword);
-        mPasswordConfirm = findViewById(R.id.input_repassword);
+        mPasswordConfirm = findViewById(R.id.input_renewpassword);
     }
 
     public void onChangePasswordClick (View v) {
