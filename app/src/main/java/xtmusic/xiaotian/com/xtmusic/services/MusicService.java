@@ -1,19 +1,24 @@
 package xtmusic.xiaotian.com.xtmusic.services;
 
 import android.app.Notification;
+import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.app.Service;
+import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.drawable.Icon;
 import android.media.MediaPlayer;
 import android.os.Binder;
+import android.os.Build;
 import android.os.Handler;
 import android.os.IBinder;
 import android.os.Message;
+import android.support.v4.app.NotificationCompat;
 import android.util.Log;
+import android.widget.RemoteViews;
 
 import java.util.Timer;
 import java.util.TimerTask;
@@ -30,6 +35,11 @@ public class MusicService extends Service {
     private MediaPlayerHelp mMediaPlayerHelp;
     private MusicModel mMusicModel;
 
+    private NotificationManager notificationManager;
+    private String notificationId = "channelId";
+    private String notificationName = "channelName";
+
+
     public MusicService() {
     }
 
@@ -40,7 +50,17 @@ public class MusicService extends Service {
          */
         public void setMusic (MusicModel musicModel) {
             mMusicModel = musicModel;
-            startForeground();
+
+            notificationManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
+            //创建NotificationChannel
+            if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.O){
+                NotificationChannel channel = new NotificationChannel(notificationId, notificationName, NotificationManager.IMPORTANCE_HIGH);
+                notificationManager.createNotificationChannel(channel);
+            }
+
+            startForeground(1,getNotification());
+
+            //startForeground();
         }
 
         /**
@@ -92,6 +112,20 @@ public class MusicService extends Service {
         super.onCreate();
 
         mMediaPlayerHelp = MediaPlayerHelp.getInstance(this);
+
+    }
+
+    private Notification getNotification() {
+        Notification.Builder builder = new Notification.Builder(this)
+                .setSmallIcon(R.mipmap.logo)
+                .setContentTitle(mMusicModel.getName())
+                .setContentText(mMusicModel.getAuthor());
+        //设置Notification的ChannelID,否则不能正常显示
+        if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            builder.setChannelId(notificationId);
+        }
+        Notification notification = builder.build();
+        return notification;
     }
 
     /**

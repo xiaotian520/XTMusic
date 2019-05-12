@@ -1,5 +1,9 @@
 package xtmusic.xiaotian.com.xtmusic.activities;
 
+import android.annotation.TargetApi;
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
+import android.os.Build;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -37,8 +41,8 @@ public class PlayMusicActivity extends BaseActivity {
 
         initData();
         initView();
-
     }
+
 
     private void initData () {
         mMusicId = getIntent().getStringExtra(MUSIC_ID);
