@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.widget.TextView;
 
 import xtmusic.xiaotian.com.xtmusic.R;
 import xtmusic.xiaotian.com.xtmusic.adapters.MusicListAdapter;
@@ -19,6 +20,7 @@ public class AlbumListActivity extends BaseActivity {
     private String mAlbumId;
     private RealmHelper mRealmHelper;
     private AlbumModel mAlbumModel;
+    private TextView mTvName;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,8 +42,10 @@ public class AlbumListActivity extends BaseActivity {
         initNavBar(true, "专辑列表", false);
 
         mRvList = findViewById(R.id.rv_list);
+        mTvName = findViewById(R.id.tv_name);
         mRvList.setLayoutManager(new LinearLayoutManager(this));
         mRvList.addItemDecoration(new DividerItemDecoration(this, DividerItemDecoration.VERTICAL));
+        mTvName.setText(mAlbumModel.getName());
         mListAdapter = new MusicListAdapter(this, null,  mAlbumModel.getList());
         mRvList.setAdapter(mListAdapter);
     }

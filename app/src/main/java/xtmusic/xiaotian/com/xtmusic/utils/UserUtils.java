@@ -14,11 +14,15 @@ import java.util.List;
 
 import xtmusic.xiaotian.com.xtmusic.R;
 import xtmusic.xiaotian.com.xtmusic.activities.LoginActivity;
+import xtmusic.xiaotian.com.xtmusic.helps.MediaPlayerHelp;
 import xtmusic.xiaotian.com.xtmusic.helps.RealmHelper;
 import xtmusic.xiaotian.com.xtmusic.helps.UserHelper;
+import xtmusic.xiaotian.com.xtmusic.models.MusicModel;
 import xtmusic.xiaotian.com.xtmusic.models.UserModel;
+import xtmusic.xiaotian.com.xtmusic.services.MusicService;
 
 public class UserUtils {
+
 
     /**
      * 验证登录用户输入合法性
@@ -74,18 +78,26 @@ public class UserUtils {
      */
     public static void logout(Context context){
 
+        MediaPlayerHelp mMediaPlayerHelp;
+        mMediaPlayerHelp = MediaPlayerHelp.getInstance(context);
+
         //删除sp保存的用户标记
         boolean isRemove = SPUtils.removeUser(context);
+
+        //停止音乐
+        mMediaPlayerHelp.pause();
+
+        // 删除数据源
+        RealmHelper realmHelper = new RealmHelper();
+        realmHelper.removeMusicSource();
+        Toast.makeText(context, "退出成功", Toast.LENGTH_SHORT).show();
+
+        realmHelper.close();
 
         if (!isRemove) {
             Toast.makeText(context, "系统错误，请稍后重试", Toast.LENGTH_SHORT).show();
             return;
         }
-
-        // 删除数据源
-        RealmHelper realmHelper = new RealmHelper();
-        realmHelper.removeMusicSource();
-        realmHelper.close();
 
         Intent intent = new Intent(context,LoginActivity.class);
         //添加Intent标志符，清理Task栈，并且新生成一个Task栈

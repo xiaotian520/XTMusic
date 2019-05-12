@@ -1,14 +1,18 @@
 package xtmusic.xiaotian.com.xtmusic.activities;
 
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 
 import xtmusic.xiaotian.com.xtmusic.R;
+import xtmusic.xiaotian.com.xtmusic.helps.MediaPlayerHelp;
 import xtmusic.xiaotian.com.xtmusic.helps.UserHelper;
+import xtmusic.xiaotian.com.xtmusic.services.MusicService;
 import xtmusic.xiaotian.com.xtmusic.utils.UserUtils;
+import xtmusic.xiaotian.com.xtmusic.views.PlayMusicView;
 
 public class MeActivity extends BaseActivity {
 
@@ -20,6 +24,7 @@ public class MeActivity extends BaseActivity {
         setContentView(R.layout.activity_me);
 
         initView();
+
     }
 
     /**
@@ -41,6 +46,7 @@ public class MeActivity extends BaseActivity {
      * 退出登录
      */
     public void onLogoutClick(View view){
+
         UserUtils.logout(this);
     }
 }

@@ -2,6 +2,7 @@ package xtmusic.xiaotian.com.xtmusic.helps;
 
 import android.content.Context;
 import android.util.Log;
+import android.widget.Toast;
 
 
 import java.io.FileNotFoundException;
@@ -12,11 +13,13 @@ import io.realm.RealmConfiguration;
 import io.realm.RealmMigration;
 import io.realm.RealmQuery;
 import io.realm.RealmResults;
+import xtmusic.xiaotian.com.xtmusic.activities.WelcomeActivity;
 import xtmusic.xiaotian.com.xtmusic.migration.Migration;
 import xtmusic.xiaotian.com.xtmusic.models.AlbumModel;
 import xtmusic.xiaotian.com.xtmusic.models.MusicModel;
 import xtmusic.xiaotian.com.xtmusic.models.MusicSourceModel;
 import xtmusic.xiaotian.com.xtmusic.models.UserModel;
+import xtmusic.xiaotian.com.xtmusic.services.MusicService;
 import xtmusic.xiaotian.com.xtmusic.utils.DataUtils;
 
 public class RealmHelper {
