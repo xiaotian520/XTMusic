@@ -16,4 +16,5 @@
     <dimen name="itemPlaySize">36dp</dimen><!--最热音乐右侧播放按钮图片大小-->
     <dimen name="discTopSize">90dp</dimen><!--光盘距离顶部的距离-->
     <dimen name="playMusicIconSize">210dp</dimen><!--光盘中的图片的大小-->
+    <dimen name="logoTitleMarginSize">60dp</dimen><!--Logo文字的距离-->
 </resources>

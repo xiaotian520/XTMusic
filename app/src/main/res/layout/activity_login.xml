@@ -10,12 +10,23 @@
 
     <include layout="@layout/nav_bar"/><!--引用布局-->
 
-    <ImageView
+    <!--<ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@mipmap/logo"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="@dimen/marginSize"/>
+        android:layout_marginTop="@dimen/marginSize"/>-->
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Top Music"
+        android:textSize="32sp"
+        android:textStyle="bold"
+        android:textColor="@color/mainColor"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="@dimen/logoTitleMarginSize"
+        android:layout_marginBottom="@dimen/logoTitleMarginSize"/>
 
     <xtmusic.xiaotian.com.xtmusic.views.InputView
         android:id="@+id/input_phone"

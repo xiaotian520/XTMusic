@@ -19,11 +19,13 @@ import android.os.Message;
 import android.support.v4.app.NotificationCompat;
 import android.util.Log;
 import android.widget.RemoteViews;
+import android.widget.Toast;
 
 import java.util.Timer;
 import java.util.TimerTask;
 
 import xtmusic.xiaotian.com.xtmusic.R;
+import xtmusic.xiaotian.com.xtmusic.activities.PlayMusicActivity;
 import xtmusic.xiaotian.com.xtmusic.activities.WelcomeActivity;
 import xtmusic.xiaotian.com.xtmusic.helps.MediaPlayerHelp;
 import xtmusic.xiaotian.com.xtmusic.models.MusicModel;
@@ -57,7 +59,6 @@ public class MusicService extends Service {
                 NotificationChannel channel = new NotificationChannel(notificationId, notificationName, NotificationManager.IMPORTANCE_HIGH);
                 notificationManager.createNotificationChannel(channel);
             }
-
             startForeground(1,getNotification());
 
             //startForeground();

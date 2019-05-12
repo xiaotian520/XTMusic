@@ -10,6 +10,7 @@ import android.view.View;
 import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
@@ -69,6 +70,7 @@ public class PlayMusicActivity extends BaseActivity {
         //mPlayMusicView.setMusicIcon("http://res.lgdsunday.club/poster-1.png");
         mPlayMusicView.setMusic(mMusicModel);
         mPlayMusicView.playMusic();
+        Toast.makeText(this,"歌曲准备中，马上就能听了！", Toast.LENGTH_LONG).show();
     }
 
     /**

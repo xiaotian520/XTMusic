@@ -62,7 +62,7 @@ public class MainActivity extends BaseActivity {
     }
 
     private void initView(){
-        initNavBar(false,"小天Music",true);
+        initNavBar(false,"Top Music",true);
 
         /*推荐歌单*/
         mRvGrid = findViewById(R.id.rv_grid);
